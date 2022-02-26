@@ -5,13 +5,14 @@ import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "users")
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
-@Entity
-@Table(name="users")
-
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
+@Builder
 public class UserModel implements Serializable {
     private static final long serialVersionUID = 3303958233860785745L;
 
@@ -22,8 +23,8 @@ public class UserModel implements Serializable {
     private Integer userId;
 
 
-    @Column(name = "NAME")
-    private String name;
+    @Column(name = "FULLNAME")
+    private String fullname;
 
     @Column(name = "USERNAME")
     private String username;

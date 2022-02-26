@@ -29,7 +29,7 @@ public class NoteService {
 
     }
 
-    public Optional<NoteModel> getById(Long id) {
+    public Optional<NoteModel> getById(Integer id) {
         return noteRepository.findById(id);
     }
 
@@ -37,7 +37,7 @@ public class NoteService {
         return noteRepository.save(noteModel);
     }
 
-    public void deleteNote(Long id) {
+    public void deleteNote(Integer id) {
         noteRepository.deleteById(id);
         ;}
 }

@@ -36,6 +36,10 @@ public class UserDataDetails implements UserDetails {
         return users.getEmail();
     }
 
+    public String getName() {
+        return users.getFullname();
+    }
+
     public Integer getId() {
         return users.getUserId();
     }

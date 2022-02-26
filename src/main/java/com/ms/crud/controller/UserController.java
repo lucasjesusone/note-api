@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/service/user")
 public class UserController {
@@ -30,10 +30,17 @@ public class UserController {
     ResponseEntity<ResponseModel> create(@Valid @RequestBody UserModel entity) throws Exception {
 
         UserModel userModel = userService.create(entity);
-        if(userModel == null) {
-            throw new Exception();
+
+        try {
+
+            if(userModel == null) {
+                return new ResponseEntity<>(new ResponseModel(0,0, "user cannot be null"), HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+
+            return new ResponseEntity<>(new ResponseModel(entity.getUserId(),1, "user created successfully"), HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(new ResponseModel(0,0, "user hasn't created successfully", e.getMessage(), ""), HttpStatus.CREATED);
         }
-        return new ResponseEntity<>(new ResponseModel(), HttpStatus.CREATED);
     }
 
 

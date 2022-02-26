@@ -42,7 +42,7 @@ public class AuthController {
 
         UserDataDetails userDetails = (UserDataDetails) authentication.getPrincipal();
 
-        return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getEmail(), userDetails.getPassword()));
+        return ResponseEntity.ok(new JwtResponse(jwt, userDetails.getEmail(), userDetails.getName(), userDetails.getPassword()));
 
 
     }

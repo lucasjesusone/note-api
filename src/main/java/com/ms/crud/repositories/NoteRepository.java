@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 
-public interface NoteRepository extends JpaRepository<NoteModel, Long> {
+public interface NoteRepository extends JpaRepository<NoteModel, Integer> {
 
-    NoteModel findByNoteId(Long noteId);
+    NoteModel findByNoteId(Integer noteId);
+
 }

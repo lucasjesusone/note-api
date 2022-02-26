@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/service/note")
 public class NoteController {
@@ -46,7 +46,7 @@ public class NoteController {
 //
     @PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    NoteModel updateNote(@PathVariable Long id, @RequestBody NoteModel entity){
+    NoteModel updateNote(@PathVariable Integer id, @RequestBody NoteModel entity){
         NoteModel note = noteRepository.findByNoteId(id);
 
         if(note != null) {
@@ -58,8 +58,8 @@ public class NoteController {
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<ResponseModel> deleteNote(@PathVariable Long id) {
+    public ResponseEntity<ResponseModel> deleteNote(@PathVariable Integer id) {
         noteService.deleteNote(id);
-        return new ResponseEntity<>(new ResponseModel(),HttpStatus.OK);
+        return new ResponseEntity<ResponseModel>(new ResponseModel(id,1, "note has been deleted successfully"), HttpStatus.OK);
     }
 }
