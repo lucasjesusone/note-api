@@ -1,4 +1,4 @@
-package com.ms.crud.models;
+package com.ms.crud.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

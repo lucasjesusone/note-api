@@ -4,8 +4,7 @@ package com.ms.crud.authentication.controller;
 import com.ms.crud.authentication.security.JwtResponse;
 import com.ms.crud.authentication.utils.JwtUtils;
 import com.ms.crud.authentication.service.UserDataDetails;
-import com.ms.crud.models.UserModel;
-import com.ms.crud.repositories.UserRepository;
+import com.ms.crud.entities.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +15,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")

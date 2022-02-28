@@ -1,6 +1,6 @@
 package com.ms.crud.controller;
 
-import com.ms.crud.models.NoteModel;
+import com.ms.crud.entities.NoteModel;
 import com.ms.crud.models.ResponseModel;
 import com.ms.crud.repositories.NoteRepository;
 import com.ms.crud.services.NoteService;

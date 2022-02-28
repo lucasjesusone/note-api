@@ -1,4 +1,4 @@
-package com.ms.crud.models;
+package com.ms.crud.entities;
 
 import lombok.*;
 import org.hibernate.Hibernate;

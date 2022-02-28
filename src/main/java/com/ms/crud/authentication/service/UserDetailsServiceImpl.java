@@ -1,6 +1,6 @@
 package com.ms.crud.authentication.service;
 
-import com.ms.crud.models.UserModel;
+import com.ms.crud.entities.UserModel;
 import com.ms.crud.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

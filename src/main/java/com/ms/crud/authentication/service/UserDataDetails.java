@@ -1,6 +1,6 @@
 package com.ms.crud.authentication.service;
 
-import com.ms.crud.models.UserModel;
+import com.ms.crud.entities.UserModel;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

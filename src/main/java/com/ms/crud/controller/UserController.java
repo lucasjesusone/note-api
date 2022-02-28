@@ -1,7 +1,7 @@
 package com.ms.crud.controller;
 
 import com.ms.crud.models.ResponseModel;
-import com.ms.crud.models.UserModel;
+import com.ms.crud.entities.UserModel;
 import com.ms.crud.repositories.UserRepository;
 import com.ms.crud.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

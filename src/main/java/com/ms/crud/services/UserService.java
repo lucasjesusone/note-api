@@ -1,7 +1,6 @@
 package com.ms.crud.services;
 
-import com.ms.crud.models.NoteModel;
-import com.ms.crud.models.UserModel;
+import com.ms.crud.entities.UserModel;
 import com.ms.crud.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
