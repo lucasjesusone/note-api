@@ -23,7 +23,7 @@ public class JwtUtils {
                 .setId(userPrincipal.getId().toString())
                 .setSubject(userPrincipal.getEmail())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
+                .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs * 1000L))
                 .signWith(SignatureAlgorithm.HS512, jwtSecret)
                 .compact();
     }
