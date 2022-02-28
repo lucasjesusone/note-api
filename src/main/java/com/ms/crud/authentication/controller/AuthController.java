@@ -5,7 +5,6 @@ import com.ms.crud.authentication.security.JwtResponse;
 import com.ms.crud.authentication.utils.JwtUtils;
 import com.ms.crud.authentication.service.UserDataDetails;
 import com.ms.crud.entities.UserModel;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -19,9 +18,8 @@ import javax.validation.Valid;
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class AuthController {
-    @Autowired
+
     PasswordEncoder passwordEncoder;
-    @Autowired
     JwtUtils jwtUtils;
 
     private final AuthenticationManager authenticationManager;

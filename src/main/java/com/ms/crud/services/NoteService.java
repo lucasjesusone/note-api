@@ -38,5 +38,5 @@ public class NoteService {
 
     public void deleteNote(Integer id) {
         noteRepository.deleteById(id);
-        ;}
+        }
 }

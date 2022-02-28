@@ -27,7 +27,4 @@ public class JwtResponse {
         this.password = password;
     }
 
-    public JwtResponse(String token) {
-        this.token = token;
-    }
 }

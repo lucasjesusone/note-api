@@ -4,7 +4,6 @@ import com.ms.crud.models.ResponseModel;
 import com.ms.crud.entities.UserModel;
 import com.ms.crud.repositories.UserRepository;
 import com.ms.crud.services.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -17,17 +16,14 @@ import java.util.List;
 @RequestMapping("/service/user")
 public class UserController {
 
-    @Autowired
     UserService userService;
-
-    @Autowired
     UserRepository userRepository;
 
 
 
     @PostMapping(value ="/new", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody
-    ResponseEntity<ResponseModel> create(@Valid @RequestBody UserModel entity) throws Exception {
+    ResponseEntity<ResponseModel> create(@Valid @RequestBody UserModel entity) {
 
         UserModel userModel = userService.create(entity);
 

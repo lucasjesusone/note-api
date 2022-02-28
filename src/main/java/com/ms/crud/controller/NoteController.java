@@ -4,7 +4,6 @@ import com.ms.crud.entities.NoteModel;
 import com.ms.crud.models.ResponseModel;
 import com.ms.crud.repositories.NoteRepository;
 import com.ms.crud.services.NoteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +17,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/service/note")
 public class NoteController {
-    @Autowired
     NoteService noteService;
 
-    @Autowired
     NoteRepository noteRepository;
 
 
@@ -60,6 +57,6 @@ public class NoteController {
     @DeleteMapping("/{id}")
     public ResponseEntity<ResponseModel> deleteNote(@PathVariable Integer id) {
         noteService.deleteNote(id);
-        return new ResponseEntity<ResponseModel>(new ResponseModel(id,1, "note has been deleted successfully"), HttpStatus.OK);
+        return new ResponseEntity<>(new ResponseModel(id,1, "note has been deleted successfully"), HttpStatus.OK);
     }
 }

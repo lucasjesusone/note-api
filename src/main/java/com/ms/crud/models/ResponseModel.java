@@ -17,37 +17,37 @@ public class ResponseModel {
 
     private int id;
     private int status;
-    private String mensagem;
+    private String message;
     private String error;
     private Date timestamp;
     private String path;
 
-    public ResponseModel(int id, String mensagem) {
+    public ResponseModel(int id, String message) {
         this.id = id;
-        this.mensagem = mensagem;
+        this.message = message;
         this.timestamp = new Date();
     }
 
-    public ResponseModel(int id, int status, String mensagem) {
+    public ResponseModel(int id, int status, String message) {
         this.id = id;
         this.status = status;
-        this.mensagem = mensagem;
+        this.message = message;
         this.timestamp = new Date();
     }
 
-    public ResponseModel(int id, int status, String mensagem, String path) {
+    public ResponseModel(int id, int status, String message, String path) {
         this.id = id;
         this.status = status;
-        this.mensagem = mensagem;
+        this.message = message;
         this.timestamp = new Date();
         this.path = path;
     }
 
-    public ResponseModel(int id, int status, String mensagem, String erro, String path) {
+    public ResponseModel(int id, int status, String message, String error, String path) {
         this.id = id;
         this.status = status;
-        this.mensagem = mensagem;
-        this.error = erro;
+        this.message = message;
+        this.error = error;
         this.timestamp = new Date();
         this.path = path;
     }
